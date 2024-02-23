@@ -1,0 +1,79 @@
+/* Navbar.css */
+
+.navbar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #333; /* Cor de fundo da Navbar */
+}
+
+.navbar-list li {
+    margin: 0;
+}
+
+.navbar-list li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #fff; /* Cor do texto */
+    transition: background-color 0.3s;
+}
+
+.navbar-list li a:hover {
+    background-color: #555; /* Cor de fundo ao passar o mouse */
+}
+
+.navbar-mobile-button {
+    display: none; /* Oculta o botão em telas maiores */
+    cursor: pointer;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    outline: none;
+    text-align: -webkit-center;
+}
+
+.navbar-mobile-button span {
+    display: block;
+    height: 2px;
+    width: 40px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.navbar-mobile-button.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.navbar-mobile-button.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-mobile-button.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Adicione a seguinte media query para tornar a Navbar responsiva em telas menores */
+@media (max-width: 768px) {
+    .navbar-list {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1;
+    }
+
+    .navbar-list.open {
+        display: flex;
+    }
+
+    .navbar-mobile-button {
+        display: block;
+    }
+}
+
